@@ -12,7 +12,7 @@ class FileController {
     } catch (error) {
       throw new AppError("Falha ao receber o arquivo. Verifique se o arquivo é um .csv");
     }
-    return response.json();
+    return response.status(201).json();
   }
 
 }

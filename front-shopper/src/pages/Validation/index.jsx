@@ -47,8 +47,14 @@ export function Validation() {
               products.map((validate, index) => (
                 <Item key={index}>
                   <p>Código: {validate.code}</p>
-                  <p>Nome: {validate.name}</p>
-                  <p>Preço Atual: {validate.currentPrice}</p>
+                  {
+                    validate.name &&
+                    <p>Nome: {validate.name}</p>
+                  }
+                  {
+                    validate.currentPrice &&
+                    <p>Preço Atual: {validate.currentPrice}</p>
+                  }
                   <p>Novo Preço: {validate.newPrice}</p>
                   <p className='validacao'>{validate.validation}</p>
                 </Item>

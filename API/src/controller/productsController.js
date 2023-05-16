@@ -4,6 +4,7 @@ const ProductRepository = require("../repositories/ProductRepository");
 const ProductAtualization = require("../models/productAtualization");
 const ProductError = require("../models/productError");
 const DiskStorage = require("../utils/DiskStorage");
+const AppError = require("../utils/AppError");
 const neatCsv = require("neat-csv");
 const fs = require("fs");
 
@@ -23,6 +24,9 @@ class ProductsController {
       }
       const list = await neatCsv(data);
 
+      if (list.length === 0) {
+        return response.status(400).json("Arquivo .csv não possui nenhum registro.");
+      }
       //executa as validações percorrendo cada uma das linhas do arquivo csv
       for(let i=0; i<list.length; i++) {
       
