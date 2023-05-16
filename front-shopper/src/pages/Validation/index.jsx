@@ -25,7 +25,6 @@ export function Validation() {
       const response = await api.get("/products");
       setProducts(response.data.listProducts);
       setValidate(response.data.valid);
-      console.log(response)
     }
     fetchValidations();
   }, []);
