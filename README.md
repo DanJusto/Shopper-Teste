@@ -80,7 +80,7 @@ Para rodar a API em ambiente de desenvolvimento, se faz necessário ingressar na
     npm install
     ```
 2. A API utiliza o MySQL como banco de dados, então se faz necessário que você tenha-o instalado em sua máquina.
-3. Com ele instalado, crie um database e preencha o arquivo ".env.example" com o host, user_db, password_db e database_name. Em seguida, retira o ".example", deixando apenas ".env" como nome do arquivo.
+3. Com ele instalado, crie um database e preencha o arquivo ".env.example" com o host, user_db, password_db e database_name. Em seguida, retire o ".example", deixando apenas ".env" como nome do arquivo.
 4. Rode a aplicação em ambiente de desenvolvimento:
 
     ```
@@ -148,44 +148,32 @@ Com o arquivo já salvo pela requisição anterior, não é necessário enviar n
 Sucesso
 ```json
 {
-    "data": [
-      {
-        "product_id": 1,
-        "title": "Batata",
-        "description": "Delícia de batata",
-        "category": "Refeição",
-        "price": "39,57",
-        "image": "4gg456df456gdfngdfknjdgf-batata.png",
-        "tags": [
-          {
-            "tag_name": "batata",
-            "product_id": 1
-          },
-          {
-            "tag_name": "azeite",
-            "product_id": 1
-          }
-        ]
-      },
-      {
-        "product_id": 2,
-        "title": "Petit Gateau",
-        "description": "Bolinho quentinho e sorvete geladinho",
-        "category": "Sobremesa",
-        "price": "12,00",
-        "image": "ghdf165fs315gdf56sfgsd-sorvete.png",
-        "tags": [
-          {
-            "tag_name": "brownie",
-            "product_id": 2
-          },
-          {
-            "tag_name": "sorvete",
-            "product_id": 2
-          }
-        ]
-      }
-    ],
+    "data": {
+    	"listProducts": [
+	      {
+		"code": 16,
+		"name": "AZEITE  PORTUGUES  EXTRA VIRGEM GALLO 500ML",
+		"currentPrice": "20.49",
+		"newPrice": "25.50",
+		"validation": "Proibido: valor de reajuste é maior ou menor que 10% do preço atual"
+	      },
+	      {
+		"code": 22,
+		"name": "ENERGETICO  RED BULL ENERGY DRINK SEM ACUCAR 250ML",
+		"currentPrice": "7.49",
+		"newPrice": "6.72",
+		"validation": "Proibido: valor é menor que o custo"
+	      },
+	      {
+		"code": 26,
+		"name": "ROLO DE PAPEL ALUMUNIO WYDA 30CMX7,5M",
+		"currentPrice": "5.79",
+		"newPrice": "5.24",
+		"validation": "OK!"
+	      }
+	 ],
+	 "valid": false
+    },
     "status": 200
 }
 ```
@@ -207,7 +195,7 @@ Erro comum
 
 **Request**
 
-Com o arquivo já salvo, não é necessário enviar nenhum conteúdo.
+Com o arquivo já salvo e todas as validações já realizadas com retorno de "OK!", não é necessário enviar nenhum conteúdo.
 
 <br />
 
@@ -222,13 +210,13 @@ Sucesso
 <div align="center">
 
 * Tela inicial  
-![screen](https://github.com/DanJusto/Project_FoodExplorer/blob/main/screenshots/tela-inicial.png)  
+![screen](https://github.com/DanJusto/Shopper-Teste/blob/main/screenshots/tela-inicial.png)  
   
 * Tela de validação fracassada  
-![screen](https://github.com/DanJusto/Project_FoodExplorer/blob/main/screenshots/validacao-bloqueio.png)  
+![screen](https://github.com/DanJusto/Shopper-Teste/blob/main/screenshots/validacao-bloqueio.png)  
   
 * Tela de sucesso da validação  
-![screen](https://github.com/DanJusto/Project_FoodExplorer/blob/main/screenshots/validacao-ok.png)  
+![screen](https://github.com/DanJusto/Shopper-Teste/blob/main/screenshots/validacao-ok.png)  
   
 
 </div>
